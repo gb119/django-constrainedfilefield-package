@@ -1,0 +1,35 @@
+{% set name = "django-constrainedfilefield" %}
+{% set version = "4.0.0" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: d44619f93e00d5c5a47b19e71e7c28f2fe937d4b71010ee9ee372502a47d8027
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - django >=2.2
+    - pip
+    - python
+  run:
+    - django >=2.2
+    - python
+
+about:
+  home: "https://github.com/mbourqui/django-constrainedfilefield/"
+  license: MIT
+  license_family: BSD
+  license_file: LICENSE
+  summary: "This Django app adds a new field, ConstrainedFileField, which adds the capability of checking the document size and type"
+  doc_url: https://github.com/mbourqui/django-constrainedfilefield/
+  dev_url: https://github.com/mbourqui/django-constrainedfilefield/
+
+extra:
+  recipe-maintainers:
+    - https://github.com/gb119
